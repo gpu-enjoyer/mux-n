@@ -1,0 +1,25 @@
+
+  <!-- custom -->
+
+    <style>
+      *:not(text):not(.splitjoinBody):not(#bg)
+      {
+        fill: none !important;
+        stroke: white !important;
+      }
+      text, .splitjoinBody
+      {
+        fill: white !important;
+        stroke: none !important;
+      }
+    </style>
+
+    <rect
+      id="bg"
+      width="100%"
+      height="100%"
+      fill="#151b23"
+      stroke="none"
+    />
+
+  <!-- custom -->

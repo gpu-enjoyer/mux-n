@@ -1,0 +1,29 @@
+
+name: Lint
+
+on:
+
+  push:
+    paths:
+      - code/**
+
+  pull_request:
+    paths:
+      - code/**
+
+jobs:
+
+  job-lint:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Connect Verible Linter
+        uses: chipsalliance/verible-linter-action@main
+        with:
+          paths: code/**
+          github_token: ${{ secrets.GITHUB_TOKEN }}

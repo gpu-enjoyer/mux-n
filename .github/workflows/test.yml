@@ -1,0 +1,32 @@
+
+name: Install and Test
+on: [ push, pull_request ]
+
+jobs:
+
+  job-install-test:
+
+    runs-on: ubuntu-latest
+
+    container:
+      image: ghcr.io/hdl/iverilog:latest
+
+    steps:
+
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Update apt
+        run: apt-get update -qq
+
+      - name: Install make
+        run: DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends make
+
+      - name: Install curl
+        run: DEBIAN_FRONTEND=noninteractive apt-get -y install curl
+
+      - name: Install uv
+        run: curl -LsSf https://astral.sh/uv/install.sh | sh
+
+      - name: Run make
+        run: make
