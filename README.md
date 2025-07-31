@@ -17,7 +17,7 @@ For `mux_n (N = 5, 8)` , a randomized subset of input values are tested.
 
 ## How to Run
 
-1. Edit the *YOSYS_ENV* variable in [gen_svg.sh](gen_svg.sh)
+1. Edit the *YOSYS_ENV* variable in [gen_svg.sh](gen_svg.sh) to generate chip schematics
 2. Adjust the *N* parameter in [mux_n.sv](code/mux_n.sv) for desired multiplexer size
 3. Execute:
 
@@ -34,7 +34,9 @@ make          # run all testbenches
 │   └── mux.sv    # 2-to-1 mux
 │
 ├── code_tb/
-│   └── ...  # testbenches
+│   ├── ...          # Cocotb testbenches
+│   └── mux_8_tb.py  # check comments
+│
 │
 ├── internal/
 │   ├── config_mux_n_tb.mk  # Cocotb config for mux_n
@@ -51,7 +53,7 @@ make          # run all testbenches
 │
 │── gen_svg.sh  # generate RTL diagrams
 │
-├── Makefile  # clean, install, build, run testbences
+├── Makefile  # clean, install, build, run testbenches
 │
 └── README.md
 ```
