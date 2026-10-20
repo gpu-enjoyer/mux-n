@@ -25,7 +25,7 @@ localparam int OutWW  = (N-1)*OutW;  // width of all lvls outputs array
 wire [OutWW-1:0] Out;                // stores the outputs of all lvls
 
 // Out size is excessive
-//  (Verilog limitations for working with parametric module)
+//  (Verilog limitations for working with parametric module) 
 
 // degenerate case
 if (N == 0)
